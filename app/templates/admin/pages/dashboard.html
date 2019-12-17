@@ -1,0 +1,10 @@
+{% extends "admin_layout.html" %}
+
+{% block admin_page %}
+  <h1>Lawyers</h1>
+  <ul>
+    {% for lawyer in lawyers%}
+      <li>{{ lawyer }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

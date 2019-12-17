@@ -1,0 +1,29 @@
+{% extends "admin_layout.html" %}
+
+{% block title %}Signin{% endblock %}
+
+{% block body %}
+  <div class="col-12">
+    <div>
+      <h1>Log in</h1>
+      <form class="" action="/admin/login" method="post" accept-charset="UTF-8" role="form">
+      {# inserting form passed from views #}
+        {{ form.csrf_token }}
+        {{ form.admin_name.label }}: {{ form.admin_name }}
+        {{ form.admin_password.label }}: {{ form.admin_password}}
+
+      {# displaying errors #}
+        {% if form.errors %}
+          <ul class="errors">
+            {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+                {% for error in field_errors %}
+                    <li>{{ form[field_name].label }}: {{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {{ form.submit }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

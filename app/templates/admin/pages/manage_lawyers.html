@@ -1,0 +1,26 @@
+{% extends "admin_layout.html" %}
+
+{% block admin_page %}
+    <form class="" action="/admin/login" method="post" accept-charset="UTF-8" role="form">
+    {# inserting form passed from views #}
+      {{ form.csrf_token }}
+      {{ form.lawyer_name.label }}: {{ form.lawyer_name }}
+      {{ form.lawyer_position.label }}: {{ form.lawyer_position}}
+      {{ form.lawyer_phone.label }}: {{ form.lawyer_phone}}
+      {{ form.lawyer_email.label }}: {{ form.lawyer_email}}
+      {{ form.lawyer_bio.label }}: {{ form.lawyer_bio}}
+      {{ form.lawyer_education.label }}: {{ form.lawyer_education}}
+
+    {# displaying errors #}
+      {% if form.errors %}
+        <ul class="errors">
+          {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+              {% for error in field_errors %}
+                  <li>{{ form[field_name].label }}: {{ error }}</li>
+              {% endfor %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {{ form.submit }}
+    </form>
+{% endblock %}

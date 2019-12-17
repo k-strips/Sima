@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    {% block body %}
+        {% include "admin/components/header.html" %}
+        <main>
+          <section class="admin-sidenav">
+            {% include "admin/components/sidenav.html" %}
+          </section>
+          <section class="admin-body">
+            {% block admin_page %}
+
+            {% endblock %}
+          </section>
+        </main>
+        {% include "admin/components/footer.html" %}
+    {% endblock %}
+  </body>
+</html>

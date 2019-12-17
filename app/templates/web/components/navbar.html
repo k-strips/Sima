@@ -1,0 +1,20 @@
+{% from 'macros.html' import nav_link with context %}
+{% from 'macros.html' import dropdown_nav with context %}
+
+<nav>
+  <div class="logo">
+    <h1>SIMA Consultancy</h1>
+  </div>
+  <ul class="nav-list">
+    {{ nav_link('web.home', 'Home') }}
+    {{ nav_link('web.attornies', 'Attornies') }}
+    <li class="dropdown">
+      <a class="dropbtn" href="#">The Firm &#9662;</a>
+      <ul class="dropdown-content">
+        {{ nav_link('web.about', 'About') }}
+        {{ nav_link('web.careers', 'Careers at SIMA') }}
+      </ul>
+    </li>
+    {{ nav_link('web.contact', 'Contact') }}
+  </ul>
+</nav>

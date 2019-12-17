@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <script src="https://kit.fontawesome.com/2cff073fdd.js" crossorigin="anonymous"></script>
+    {% assets "web_css" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}" />
+    {% endassets %}
+    <title>{% block page_title%}{% endblock%}</title>
+  </head>
+  <body>
+    <header>
+      <div id="header-logo">
+        <h1>SIMA Consultancy</h1>
+      </div>
+      <div>
+        <a href="tel:+23330444444"><i class="fas fa-phone-alt"></i>Call: +23330444444</a>
+        <a href="simaconsultancy@gmail.com"><i class="fas fa-envelope"></i>simaconsultancy@gmail.com</a>
+      </div>
+      {% include 'web/components/navbar.html' %}
+    </header>
+    <main class="container">
+      {% block body %} {% endblock %}
+    </main>
+      {% include 'web/components/footer.html' %}
+  </body>
+</html>
