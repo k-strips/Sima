@@ -1,9 +1,9 @@
 # Sima
 
-#The / directory contains an instance folder with a config.py 
+#The / dir contains an instance folder with a config.py which wasn't commited due to security reasons 
 
-#create the above in step
+#create as mentioned the step above
 
-#add a secret key and csrf key also add a bcrypt log.
+#add a secret key and csrf key also add a bcrypt log to config.py 
 
-#create env in the route and run the appwith the .sh file
+#create .env in the / dir and run the app with the shell script
