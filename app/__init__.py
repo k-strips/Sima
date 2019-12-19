@@ -48,6 +48,9 @@ def create_app():
         #register blueprints
         app.register_blueprint(admin)
         app.register_blueprint(web)
+
+        # Build the database:
+        # This will create the database file using SQLAlchemy
         db.create_all()
 
         return app

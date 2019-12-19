@@ -4,7 +4,8 @@ DEBUG = True
 TESTING = True
 
 # Define the application directory
-BASE_DIR = os.chdir(os.path.dirname(os.getcwd))
+CUR_FILE = os.path.abspath(os.path.dirname(__file__))
+BASE_DIR = os.path.abspath(os.path.dirname(CUR_FILE))
 
 # Define the database - we are working with
 # SQLite for this example
