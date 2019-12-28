@@ -6,7 +6,7 @@
   <div class="col-12">
     <div>
       <h1>Log in</h1>
-      <form class="" action="/admin/login" method="post" accept-charset="UTF-8" role="form">
+      <form class="" action="{{ url_for('admin.login') }}" method="post" accept-charset="UTF-8" role="form">
       {# inserting form passed from views #}
         {{ form.csrf_token }}
         {{ form.admin_name.label }}: {{ form.admin_name }}

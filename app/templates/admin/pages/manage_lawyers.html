@@ -1,7 +1,7 @@
 {% extends "admin_layout.html" %}
 
 {% block admin_page %}
-    <form class="" action="/admin/login" method="post" accept-charset="UTF-8" role="form">
+    <form class="" action="{{ url_for('admin.addAttorney') }}" method="post" accept-charset="UTF-8" role="form">
     {# inserting form passed from views #}
       {{ form.csrf_token }}
       {{ form.lawyer_name.label }}: {{ form.lawyer_name }}

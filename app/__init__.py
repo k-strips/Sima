@@ -45,6 +45,9 @@ def create_app():
         from app.admin.views import admin
         from app.web.views import web
 
+        #import assets
+        from .util import assets
+
         #register blueprints
         app.register_blueprint(admin)
         app.register_blueprint(web)
