@@ -13,6 +13,12 @@ class AdminLogin(FlaskForm):
     admin_password = PasswordField('Admin Password', validators=[DataRequired()])
     submit = SubmitField("Login")
 
+#define form for forgot_password page
+class AdminForgot(FlaskForm):
+    admin_name = StringField("Admin Name", validators=[DataRequired()])
+    admin_email = StringField("Admin Email", validators=[DataRequired(), Email()])
+    submit = SubmitField("Reset Password")
+
 
 #define the login form for lawyers
 class AddLawyer(FlaskForm):

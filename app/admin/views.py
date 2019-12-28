@@ -27,7 +27,7 @@ def login():
     return render_template('admin/auth/login.html', form=form)
 
 
-@admin.route("/forgot_password", methods=['GET', 'POST'])
+"""@admin.route("/forgot_password", methods=['GET', 'POST'])
 def forgot():
     #
     form = AdminForgot()
@@ -35,11 +35,11 @@ def forgot():
     if form.validate_on_submit():
         try:
             admin = Admin.query.filter_by(name=form.admin_name.data).first()
-            if admin.name == form.admin_name.data and admin.email == form.admin_email:
-
+            if admin.name == form.admin_name.data and admin.email == form.admin_email
         except ValueError:
             return render_template("404.html")
     return render_template("admin/auth/forgot.html", form=form, title="Forgot Password")
+"""
 
 
 @admin.route("/dashboard")
@@ -48,7 +48,7 @@ def dashboard():
     return render_template("admin/pages/dashboard.html", lawyers=lawyers)
 
 
-@admin.route("/add_attorney" methods=['GET', 'POST'])
+@admin.route("/add_attorney", methods=['GET', 'POST'])
 def addAttorney():
     #import form to add lawyers from form
     form = AddLawyer()
